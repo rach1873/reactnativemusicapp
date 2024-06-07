@@ -1,20 +1,72 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import BassBottom from "./screens/BassBottom";
+import BassTop from "./screens/BassTop";
+import TrebleBottom from "./screens/TrebleBottom";
+import TrebleTop from "./screens/TrebleTop";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen
+          name="BassBottom"
+          component={BassBottom}
+          options={{
+            tabBarIcon: () => (
+              <MaterialCommunityIcons
+                name="music-clef-bass"
+                size={24}
+                color="black"
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="BassTop"
+          component={BassTop}
+          options={{
+            tabBarIcon: () => (
+              <MaterialCommunityIcons
+                name="music-clef-bass"
+                size={24}
+                color="black"
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="TrebleBottom"
+          component={TrebleBottom}
+          options={{
+            tabBarIcon: () => (
+              <MaterialCommunityIcons
+                name="music-clef-treble"
+                size={24}
+                color="black"
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="TrebleTop"
+          component={TrebleTop}
+          options={{
+            tabBarIcon: () => (
+              <MaterialCommunityIcons
+                name="music-clef-treble"
+                size={24}
+                color="black"
+              />
+            ),
+          }}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
