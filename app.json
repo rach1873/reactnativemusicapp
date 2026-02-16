@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "ledger",
-    "slug": "ledger",
+    "slug": "musicapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,6 +22,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ce03fdff-f6dc-4b9c-9453-3838c6ef77f3"
+      }
+    },
+    "owner": "rach18731943",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/ce03fdff-f6dc-4b9c-9453-3838c6ef77f3"
     }
   }
 }
